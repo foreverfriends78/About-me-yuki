@@ -1,9 +1,8 @@
-/* Scroll behavior */
+/* Global Styles */
 html {
   scroll-behavior: smooth;
 }
 
-/* Body base style */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -11,6 +10,7 @@ body {
   color: #fff;
   overflow-x: hidden;
   position: relative;
+  height: 100%;
 }
 
 /* Floating Emoji Effect */
@@ -33,20 +33,17 @@ body::before {
   100% { transform: translateX(-50%) translateY(300vh); opacity: 0; }
 }
 
-/* Header */
+/* Header Section */
 header {
   padding: 40px 20px;
   background: #111;
   text-align: center;
   box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
-  animation: fadeSlideDown 1.8s ease-in-out;
+  z-index: 1;
+  animation: fadeIn 2s ease;
 }
 
-@keyframes fadeSlideDown {
-  0% { opacity: 0; transform: translateY(-40px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
+/* Profile Image */
 .profile-pic {
   width: 160px;
   height: 160px;
@@ -62,6 +59,7 @@ header {
   50% { transform: scale(1.07); }
 }
 
+/* Main Title */
 h1 {
   font-family: 'Pacifico', cursive;
   font-size: 40px;
@@ -76,14 +74,15 @@ h1 {
   to { text-shadow: 0 0 30px #ff69b4; }
 }
 
+/* Tagline Styling */
 .tagline {
   font-size: 18px;
   color: #ffc0cb;
   font-style: italic;
-  animation: fadeIn 2.5s ease;
+  animation: fadeIn 4s ease-in;
 }
 
-/* Card Base */
+/* Card Styling */
 .card {
   margin: 40px auto;
   padding: 30px;
@@ -95,16 +94,11 @@ h1 {
   transition: transform 0.5s ease;
   position: relative;
   z-index: 1;
-  animation: popIn 1.2s ease-out;
+  animation: slideUp 2s ease;
 }
 
 .card:hover {
   transform: scale(1.02);
-}
-
-@keyframes popIn {
-  0% { transform: scale(0.9); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
 }
 
 .card::before {
@@ -125,55 +119,66 @@ h1 {
   100% { background-position: 0% 50%; }
 }
 
-/* Text Style */
-h2 {
-  color: #ff69b4;
-  font-size: 24px;
-  margin-bottom: 15px;
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
-p {
-  font-size: 15px;
-  color: #eee;
-  margin: 6px 0;
-  transition: all 0.3s ease;
+@keyframes slideUp {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 /* Button Styling */
-.cute-btn {
+.join-btn {
   display: inline-block;
-  margin: 25px 10px 0;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  margin-top: 25px;
+  padding: 16px 28px;
+  background: linear-gradient(145deg, #ff69b4, #ff1493);
   color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
+  border-radius: 25px;
+  font-size: 18px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 0 15px #ff69b4;
-  transition: all 0.3s ease;
-  animation: buttonPop 2s ease-in-out;
+  box-shadow: 0 0 25px rgba(255, 182, 193, 0.3);
+  transform: translateX(-50%);
+  animation: slideIn 1s ease-out;
 }
 
-@keyframes buttonPop {
-  0% { transform: scale(0.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+.join-btn:hover {
+  box-shadow: 0 0 35px rgba(255, 182, 193, 0.5);
+  transform: translateY(-5px);
 }
 
-.cute-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px #ff85a2, 0 0 40px #ff1493;
+@keyframes slideIn {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-/* CTA Container Animation */
-.join-section {
-  margin: 60px 0;
-  animation: fadeInSoft 2.8s ease-in-out;
+/* Welcome Message Styling */
+.welcome-msg {
+  font-size: 24px;
+  color: #fff;
   text-align: center;
+  animation: welcomeAnimation 3s ease-out;
 }
 
-@keyframes fadeInSoft {
-  0% { opacity: 0; transform: translateY(60px); }
+@keyframes welcomeAnimation {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Thank You Message Styling */
+.thank-you-msg {
+  font-size: 20px;
+  color: #ff69b4;
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeThankYou 2s ease-in;
+}
+
+@keyframes fadeThankYou {
+  0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
 }
