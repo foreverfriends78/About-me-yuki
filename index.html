@@ -8,6 +8,7 @@
   <style>
     html {
       scroll-behavior: smooth;
+      height: 100%;
     }
 
     body {
@@ -17,8 +18,10 @@
       color: #fff;
       overflow-x: hidden;
       position: relative;
+      height: 100%;
     }
 
+    /* Floating Emoji Effect */
     body::before {
       content: "✨ ❤️ 🦋 🌸 💫";
       font-size: 80px;
@@ -44,6 +47,7 @@
       text-align: center;
       box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
       z-index: 1;
+      animation: fadeIn 2s ease;
     }
 
     .profile-pic {
@@ -112,39 +116,6 @@
       animation: glowLoop 10s linear infinite;
     }
 
-    h2 {
-      color: #ff69b4;
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 15px;
-      color: #eee;
-      margin: 6px 0;
-      transition: all 0.3s ease;
-    }
-
-    .cute-btn {
-      display: inline-block;
-      margin: 25px 10px 0;
-      padding: 14px 28px;
-      background: linear-gradient(135deg, #ff69b4, #ff1493);
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 0 15px #ff69b4;
-      transition: all 0.3s ease;
-    }
-
-    .cute-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #ff69b4;
-    }
-
     @keyframes glowLoop {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -161,30 +132,73 @@
       100% { transform: translateY(0); opacity: 1; }
     }
 
-    .join-section {
-      margin: 60px 0;
-      animation: fadeIn 2s ease-in-out;
+    /* New Join Button */
+    .join-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 16px 28px;
+      background: linear-gradient(145deg, #ff69b4, #ff1493);
+      color: white;
+      border-radius: 25px;
+      font-size: 18px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 25px rgba(255, 182, 193, 0.3);
+      transform: translateX(-50%);
+      animation: slideIn 1s ease-out;
     }
+
+    .join-btn:hover {
+      box-shadow: 0 0 35px rgba(255, 182, 193, 0.5);
+      transform: translateY(-5px);
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Welcome Message */
+    .welcome-msg {
+      font-size: 24px;
+      color: #fff;
+      text-align: center;
+      animation: welcomeAnimation 3s ease-out;
+    }
+
+    @keyframes welcomeAnimation {
+      0% { opacity: 0; transform: scale(0.8); }
+      50% { opacity: 0.5; transform: scale(1.1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Thank You Message */
+    .thank-you-msg {
+      font-size: 20px;
+      color: #ff69b4;
+      text-align: center;
+      margin-top: 30px;
+      animation: fadeThankYou 2s ease-in;
+    }
+
+    @keyframes fadeThankYou {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://i.ibb.co/41d7c6p/pfp.jpg" alt="Yuki's Pic" class="profile-pic">
+    <img src="https://i.ibb.co/Kz7nbVHC/IMG-20250421-135924-295.jpg" alt="Yuki's Pic" class="profile-pic">
     <h1>𓆰𓏲!𓂃ֶꪳYUKI 𓆩〭〬🦋𓆪ꪾ</h1>
     <div class="tagline">“Aesthetic Soul in a Digital World”</div>
   </header>
 
-  <!-- Intro Card -->
-  <div class="card">
-    <h2>Intro</h2>
-    <p><strong>Name:</strong> Yuki</p>
-    <p><strong>Age:</strong> 18</p>
-    <p><strong>Birthday:</strong> August 15</p>
-    <p><strong>Location:</strong> Kolkata, West Bengal</p>
-    <p><strong>Pet:</strong> A cute goat named Mochi</p>
-    <p><strong>Hobbies:</strong> Drawing, anime, and spreading vibes</p>
-    <p><strong>Current Mood:</strong> Dreamy and dramatic</p>
+  <!-- Welcome Message -->
+  <div class="welcome-msg">
+    Welcome to Yuki’s World! We are happy to have you here. ✨
   </div>
 
   <!-- About Me Card -->
@@ -201,9 +215,12 @@
     <p><strong>Vibe:</strong> Soft Girl + Cute Cat Energy</p>
   </div>
 
-  <!-- CTA Button -->
-  <div class="join-section">
-    <a href="#" class="cute-btn">Join Yuki’s World</a>
+  <!-- Join Button -->
+  <a href="https://foreverfriends78.github.io/foreverfriends-websites" class="join-btn">Join Yuki's World</a>
+
+  <!-- Thank You Message -->
+  <div class="thank-you-msg">
+    Thank you for joining! Enjoy the vibes. 💖
   </div>
 
 </body>
