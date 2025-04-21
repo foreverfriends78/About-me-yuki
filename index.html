@@ -3,18 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>𓆰𓏲!𓂃YUKI 🦋𓆪</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Yuki’s World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #1a1a1a 0%, #000 100%);
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "✨ ❤️ 🦋 🌸 💫";
+      font-size: 80px;
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: floatHearts 25s linear infinite;
+      opacity: 0.08;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes floatHearts {
+      0% { transform: translateX(-50%) translateY(0); opacity: 0.1; }
+      100% { transform: translateX(-50%) translateY(300vh); opacity: 0; }
+    }
+
+    header {
+      padding: 40px 20px;
+      background: #111;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
+      z-index: 1;
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #ff85a2;
+      box-shadow: 0 0 35px #ff85a2;
+      margin-bottom: 15px;
+      animation: pulseZoom 4s infinite ease-in-out;
+    }
+
+    @keyframes pulseZoom {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 40px;
+      background: linear-gradient(to right, #ff69b4, #ff1493, #ff69b4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glowText 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px #ff69b4; }
+      to { text-shadow: 0 0 30px #ff69b4; }
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: #ffc0cb;
+      font-style: italic;
+      animation: fadeIn 4s ease-in;
+    }
+
+    .card {
+      margin: 40px auto;
+      padding: 30px;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.2);
+      backdrop-filter: blur(10px);
+      transition: transform 0.5s ease;
+      position: relative;
+      z-index: 1;
+      animation: slideUp 2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -10px; left: -10px; right: -10px; bottom: -10px;
+      border-radius: 20px;
+      background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4);
+      z-index: -1;
+      filter: blur(25px);
+      opacity: 0.2;
+      animation: glowLoop 10s linear infinite;
+    }
+
+    h2 {
+      color: #ff69b4;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #eee;
+      margin: 6px 0;
+      transition: all 0.3s ease;
+    }
+
+    .cute-btn {
+      display: inline-block;
+      margin: 25px 10px 0;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 15px #ff69b4;
+      transition: all 0.3s ease;
+    }
+
+    .cute-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #ff69b4;
+    }
+
+    @keyframes glowLoop {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideUp {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .join-section {
+      margin: 60px 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <img src="https://i.ibb.co/Kz7nbVHC/IMG-20250421-135924-295.jpg" alt="Yuki" class="profile-pic" />
-    <h1>𓆰𓏲!𓂃YUKI 🦋𓆪</h1>
-    <p class="tagline">Tanu — Soft Cute Cat Queen</p>
-    <p class="shayari">"सादगी में भी कातिलाना अंदाज़ है,<br>तभी तो हर नज़र बस उन पर ही ठहरती है।"</p>
+    <img src="https://i.ibb.co/41d7c6p/pfp.jpg" alt="Yuki's Pic" class="profile-pic">
+    <h1>𓆰𓏲!𓂃ֶꪳYUKI 𓆩〭〬🦋𓆪ꪾ</h1>
+    <div class="tagline">“Aesthetic Soul in a Digital World”</div>
   </header>
 
+  <!-- Intro Card -->
+  <div class="card">
+    <h2>Intro</h2>
+    <p><strong>Name:</strong> Yuki</p>
+    <p><strong>Age:</strong> 18</p>
+    <p><strong>Birthday:</strong> August 15</p>
+    <p><strong>Location:</strong> Kolkata, West Bengal</p>
+    <p><strong>Pet:</strong> A cute goat named Mochi</p>
+    <p><strong>Hobbies:</strong> Drawing, anime, and spreading vibes</p>
+    <p><strong>Current Mood:</strong> Dreamy and dramatic</p>
+  </div>
+
+  <!-- About Me Card -->
   <div class="card">
     <h2>About Me</h2>
     <p><strong>Username:</strong> @yuki_luvs_u</p>
@@ -28,10 +201,10 @@
     <p><strong>Vibe:</strong> Soft Girl + Cute Cat Energy</p>
   </div>
 
-  <div class="card">
-    <h2>Join My World</h2>
-    <a href="https://foreverfriends78.github.io/foreverfriends-websites" class="cute-btn" target="_blank">Visit My Website</a>
-    <a href="https://t.me/+UBlGtjD5wjc5NzJl" class="cute-btn" target="_blank">Join My GC</a>
+  <!-- CTA Button -->
+  <div class="join-section">
+    <a href="#" class="cute-btn">Join Yuki’s World</a>
   </div>
+
 </body>
 </html>
